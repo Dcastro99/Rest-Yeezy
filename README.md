@@ -38,8 +38,4 @@
 
 # Documentation
 
-### Collaborators:
-
-- Martha
-- Hugo
-- Jim
+- notes go here
