@@ -9,13 +9,12 @@ html, body {
 }
 
 body {
-  // background: $backgroundColor;
-  // background: rgb(171, 171, 171);
-  background-image: url(../src/images/background1.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #ffd89b;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #19547b, #ffd89b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #19547b, #ffd89b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   height: 100%;
+
 
   #root {
     display: flex;
