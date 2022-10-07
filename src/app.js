@@ -13,7 +13,7 @@ function App() {
   const [requestParams, setrequestParams] = useState({});
 
   const callApi = (requestParams) => {
-    // mock output 
+
     const payload = {
       count: 2,
       results: [
