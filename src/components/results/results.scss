@@ -1,4 +1,21 @@
 section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color:white;
   font-size: 15px;
+
+}
+
+.pre{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+ 
+}
+.pre-box{
+  border: 4px solid black;
+  border-radius: 5px;
+  width:30%;
+  margin-bottom: 5rem;
 }

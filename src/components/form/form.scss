@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@500&family=Fredericka+the+Great&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Ubuntu:wght@300&display=swap');
 $backgroundColor: #efefef;
 $radius: 40%;
 
 form {
-  display: inline-block;
+  display: flex;
+  flex-direction: column; 
+  justify-content:center ;
+  align-items: center;
   margin: auto;
-  width: 200px;
+  width: 300px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: rgba(57, 62, 62, 0.371);
+  border-radius: 10px;
 
   label {
     display: flex;
@@ -13,13 +19,13 @@ form {
 
     &.methods {
       span {
-        color: rgb(255, 255, 255);
-        font-family: 'Bungee Spice', cursive;
+        color: rgb(230, 230, 230);
+        font-family: 'Anton', sans-serif;
         cursor: pointer;
         margin-right: 1rem;
         padding: .25rem .5rem;
-        background: rgb(48, 48, 48);
-        border-radius: 10px;
+        background: rgba(70, 70, 70, 0.703);
+        border-radius: 7px;
 
         &:hover, &.active {
           background: #fff;
@@ -30,5 +36,12 @@ form {
 }
 #URL{
 color: #efefef;
-font-family: 'Fredericka the Great', cursive;
+font-family: 'Anton', sans-serif;
+
+}
+#form-button{
+  color:rgba(0, 255, 234, 0.73);
+  background-color: gray;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 7px;
 }

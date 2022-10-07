@@ -11,14 +11,3 @@ export default function Header() {
   )
 }
 
-// class Header extends React.Component {
-//   render() {
-//     return (
-//       <header>
-//         <h1>REST-YEEZY</h1>
-//       </header>
-//     );
-//   }
-// }
-
-// export default Header;
