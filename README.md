@@ -1,12 +1,14 @@
 > # Module 5
 
-# Lab 27
+# Lab 26
 
 - [Component Based UI](./Lab%20info/lab26.md)
 
-# Lab 28
+# Lab 27
 
-# Lab 29
+- - [useState() Hook](./Lab%20info/lab27.md)
+
+# Lab 28
 
 ## Deployment Links
 
@@ -30,7 +32,7 @@
 - Lab 26
   - [PR Link](https://github.com/Dcastro99/rest-yeezy/pull/1)
 - Lab 27
-  - PR Link
+  - [PR Link](https://github.com/Dcastro99/Rest-Yeezy/pull/2)
 - Lab 28
   - PR Link
 - Lab 29
