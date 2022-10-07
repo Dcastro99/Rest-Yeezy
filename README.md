@@ -18,7 +18,7 @@
   - [Sandbox](https://codesandbox.io/p/github/Dcastro99/rest-yeezy/draft/sad-kalam?import=true&file=%2Frest-yeezy%2Fsrc%2Fapp.js&selection=%5B%7B%22endColumn%22%3A1%2C%22endLineNumber%22%3A4%2C%22startColumn%22%3A1%2C%22startLineNumber%22%3A4%7D%5D)
 
 - Lab 27
-  - Deploy link here:
+  - [Deployed](https://dcastro99.github.io/Rest-Yeezy/)
 - Lab 28
   - Deploy link here:
 - Lab 29
