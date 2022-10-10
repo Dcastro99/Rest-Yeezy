@@ -1,6 +1,7 @@
 import { createElement } from 'react';
 
 import { render, screen } from "@testing-library/react";
+
 import Header from "../components/header/index";
 // import Footer from "../components/footer/index";
 import Results from "../components/results/index";
