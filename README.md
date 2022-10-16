@@ -12,6 +12,10 @@
 
 - [Component Lifecycle / useEffect() Hook](./Lab%20info/lab28.md)
 
+# Lab 29
+
+- [Component Lifecycle / useEffect() Hook](./Lab%20info/lab28.md)
+
 ## Deployment Links
 
 - Lab 26
@@ -33,7 +37,7 @@
 - Lab 28
   - [PR Link](https://github.com/Dcastro99/Rest-Yeezy/pull/7)
 - Lab 29
-  - PR Link
+  - [PR Link](https://github.com/Dcastro99/Rest-Yeezy/pull/9)
 
 # Documentation
 
