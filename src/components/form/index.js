@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 let apiStorage = [];
 
 
+// >>>>>>>>> APP STATE >>>>>>>>>>
 
 const appState = {
   method: null,
@@ -29,6 +30,7 @@ const appState = {
 // }
 
 
+// >>>>>>>>> REDUCER FUNCTION >>>>>>>>>>>>>>
 
 const reducer = (state, action) => {
   console.log('DID WE MAKE IT??', action)
@@ -55,6 +57,9 @@ export default function Form(props) {
   const handleShow = () => setShow(true);
 
 
+
+  // >>>>>>>> HANDLE SUBMIT FUNCTION >>>>>>>>>>>>
+
   const handleSubmit = e => {
     e.preventDefault();
     console.log('RE-METHOD::', appState)
@@ -67,21 +72,17 @@ export default function Form(props) {
 
     props.handleApiCall(formData);
 
-
+    // >>>>>>>> HISTORY STORING IN LOCAL STORAGE >>>>>>>>>>>>
     if (appState.url !== null) {
       apiStorage.push(appState.url);
     }
     let histroyStr = JSON.stringify(apiStorage);
     localStorage.setItem('results', histroyStr);
-
-
-
-
-
   }
 
 
 
+  // >>>>>>>>>>>>> HANDLER FUNCTIONS >>>>>>>>>>>>>>>>>
 
   const handleURL = (e) => {
     console.log('URL-CHANGE', e.target.value)
@@ -100,19 +101,29 @@ export default function Form(props) {
 
 
 
+  // >>>>>>>> RETRIVING FROM LOCAL STORAGE >>>>>>>>>>>>>>>
+
   const saved = JSON.parse(localStorage.getItem('results'));
 
 
 
   return (
     <>
+
       <div id='container'>
+
+        {/* >>>>>>>  FORM >>>>>>>>>>>>*/}
+
         <form onSubmit={handleSubmit}>
           <label >
             <span id='URL'>URL: </span>
             <input name='url' type='text' onChange={(e) => handleURL(e)} />
             <button id='form-button' type="submit">GO!</button>
           </label>
+
+
+          {/* >>>>>>>  BUTTONS >>>>>>>>>>>>*/}
+
           <div className="methods">
             <button id="get" onClick={(e) => handleMethod(e)} value='GET' >GET</button >
             <button id="post" onClick={(e) => handleMethod(e)} value='POST'>POST</button>
@@ -122,6 +133,9 @@ export default function Form(props) {
         </form>
         <div id='modalMain'>
           <div id="modalContainer">
+
+            {/* >>>>>>>  MODAL >>>>>>>>>>>>*/}
+
             <Button id='modalButton' variant="primary" onClick={handleShow}>
               History
             </Button>
@@ -149,6 +163,7 @@ export default function Form(props) {
 
 
 
+          {/* >>>>>>>  JSON TEXT AREA >>>>>>>>>>>>*/}
 
           <div id='jsonLable'>
             <textarea id='json' onChange={(e) => handleBody(e)} />
