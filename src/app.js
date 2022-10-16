@@ -26,7 +26,7 @@ function App() {
       if (requestParams.method === 'GET') {
         await axios.get(requestParams.url).then((response) => {
           setData(response);
-          console.log('ressss', response);
+          // console.log('ressss', response);
         })
       }
 
@@ -34,7 +34,7 @@ function App() {
         await axios.post(requestParams.url, requestParams.body).then((response) => {
 
           setData(response);
-          console.log('BODY-REQUESTED!!!', response);
+          // console.log('BODY-REQUESTED!!!', response);
         })
       }
 
