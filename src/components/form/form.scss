@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@500&family=Fredericka+the+Great&family=Poppins:wght@500&display=swap');
+
 $backgroundColor: #efefef;
 $radius: 40%;
 
+
+#modalTitle {
+  color: coral;
+  font-family: 'Fredericka the Great', cursive;
+}
 form {
   display: flex;
   flex-direction: column; 
   justify-content:center ;
   align-items: center;
   margin: auto;
+  padding:15px;
   width: 300px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   background-color: rgba(57, 62, 62, 0.371);
@@ -17,8 +25,23 @@ form {
     display: flex;
     margin: 1rem 0;
 
-    &.methods {
-      button{
+  }
+  #modalMain {
+    background-color: darkcyan;
+    display: flex;
+    flex-direction: column; 
+    // align-items: center;
+  }
+
+}
+
+
+#methods {
+  display: flex;
+  margin: 1rem 0;
+}
+
+button{
         color: rgb(230, 230, 230);
         font-family: 'Anton', sans-serif;
         cursor: pointer;
@@ -26,29 +49,38 @@ form {
         padding: .25rem .5rem;
         background: rgba(70, 70, 70, 0.703);
         border-radius: 7px;
-        &:hover, &.active {
-          color:rgb(182, 6, 6);
-          background: #fff;
+        &:hover {
+          color: coral;
+          background: rgba(0, 0, 0, 0.593);
         }
-
       }
-      // span {
-      //   color: rgb(230, 230, 230);
-      //   font-family: 'Anton', sans-serif;
-      //   cursor: pointer;
-      //   margin-right: 1rem;
-      //   padding: .25rem .5rem;
-      //   background: rgba(70, 70, 70, 0.703);
-      //   border-radius: 7px;
 
-      //   &:hover, &.active {
-      //     color:rgb(182, 6, 6);
-      //     background: #fff;
-      //   }
-      // }
-    }
-  }
+    
+
+#modalButton {
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  // margin: auto;
+  margin: 2rem auto 2rem auto ;
+  width: 80px;
 }
+.modal {
+// background-color: blueviolet;  
+color: #efefef;
+  display: flex;
+  flex-direction:column; 
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: rgba(57, 62, 62, 0.371);
+  border-radius: 10px;
+  margin-left: 25px;
+  padding: 2rem;
+  width: fit-content;
+  height:fit-content;
+}
+
 #URL{
 color: #efefef;
 font-family: 'Anton', sans-serif;
@@ -60,4 +92,30 @@ font-family: 'Anton', sans-serif;
   font-family: 'Ubuntu', sans-serif;
   border-radius: 7px;
   cursor: pointer;
+}
+#jsonLable{
+  display: flex;
+  flex-direction: column; 
+  justify-content:flex-start;
+  align-items: center;
+  margin: auto;
+  padding:15px;
+  width: 400px;
+  min-height: 200px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: rgba(57, 62, 62, 0.371);
+  border-radius: 10px;
+
+}
+#json{
+  // background-color: aqua;
+  display: flex;
+  flex-direction: column; 
+  // justify-content: flex-start;
+  align-items: right;
+  margin: auto, 0;
+  padding:15px;
+  min-height: 200px;
+  // height: 400px;
+  width: 350px;
 }
