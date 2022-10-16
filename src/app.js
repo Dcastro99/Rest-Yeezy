@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect } from 'react';
 //here
 import './app.scss';
 
@@ -14,9 +14,7 @@ import axios from 'axios';
 function App() {
   const [data, setData] = useState(null);
   const [requestParams, setrequestParams] = useState({});
-  // const [state, dispatch] = useReducer(dispatchAction, {
 
-  // })
 
 
   const callApi = (requestParams) => {
