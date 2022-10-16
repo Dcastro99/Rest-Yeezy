@@ -37,7 +37,7 @@
 - Lab 28
   - [PR Link](https://github.com/Dcastro99/Rest-Yeezy/pull/7)
 - Lab 29
-  - [PR Link](https://github.com/Dcastro99/Rest-Yeezy/pull/9)
+  - [PR Link](https://github.com/Dcastro99/Rest-Yeezy/pull/11)
 
 # Documentation
 
