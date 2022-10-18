@@ -14,7 +14,7 @@
 
 ## Lab 29
 
-- [Component Lifecycle / useEffect() Hook](./Lab%20info/lab28.md)
+- [Advanced State with Reducers](./Lab%20info/lab29.md)
 
 # Deployment Links
 
