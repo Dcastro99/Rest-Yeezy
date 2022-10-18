@@ -1,31 +1,45 @@
 import React, { useState, useEffect } from 'react';
-//here
-import './app.scss';
-
 import Header from './components/header';
 import Footer from './components/footer/index';
 import Form from './components/form';
 import Results from './components/results';
+import History from './components/history/index';
 import axios from 'axios';
+import './app.scss';
 
+// >>>>>>>>>>  STORAGE ARRAY  >>>>>>>>>>>>>> //
 
+const apiStorage = [];
 
 
 function App() {
-  const [data, setData] = useState(null);
   const [requestParams, setrequestParams] = useState({});
+  const [data, setData] = useState(null);
+
+
+  const history = apiStorage;
 
 
 
   const callApi = (requestParams) => {
+    apiStorage.push(requestParams.url);
     setrequestParams(requestParams)
   }
+
+
+
   useEffect(() => {
+    // console.log('HERE')
+    let newData = true;
+
+    // >>>>>>>>>>>>>>>>>  AXIOS CALLS  >>>>>>>>>>>>>>>>>>> //
 
     const getData = async () => {
       if (requestParams.method === 'GET') {
         await axios.get(requestParams.url).then((response) => {
-          setData(response);
+          if (newData) {
+            setData(response);
+          }
           // console.log('ressss', response);
         })
       }
@@ -51,13 +65,19 @@ function App() {
           // console.log('ressssss', response);
         })
       }
-    }
-    if (requestParams.method !== null) {
-      // console.log('METHOD NULL', requestParams)
-      getData();
-    }
-  }, [requestParams])
 
+    }
+
+
+    getData()
+
+      .catch(console.error);
+
+
+    return () => newData = false;
+
+
+  }, [requestParams])
 
 
 
@@ -69,9 +89,9 @@ function App() {
       <div id='container'>
         <Form handleApiCall={callApi} />
 
+        <History data={history} />
         <Results data={data} />
       </div>
-
       <Footer />
     </React.Fragment>
   );

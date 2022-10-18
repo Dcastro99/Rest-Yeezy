@@ -1,110 +1,74 @@
-import React, { useState, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import './form.scss';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-
-let apiStorage = [];
 
 
-// >>>>>>>>> APP STATE >>>>>>>>>>
+
+
+// >>>>>>>>> APP STATE >>>>>>>>>> //
 
 const appState = {
-  method: null,
-  url: '',
-  body: null
+  method: '',
+  url: undefined,
+  body: undefined
 }
 
-// const onBodyChange = (e) => {
-//   console.log('BOOOOOOODDDDDYYYY::', e)
-//   // e.preventDefault();
-//   if (e.body !== null) {
-//     return e.body
-//   }
 
-// }
-// const onMethodChange = (e) => {
-//   if (e.method === "GET") {
-//     e.body = null;
-//   }
-//   return e.method
-// }
-
-
-// >>>>>>>>> REDUCER FUNCTION >>>>>>>>>>>>>>
+// >>>>>>>>>>>>   REDUCER FUNCTION   >>>>>>>>>>>>>> //
 
 const reducer = (state, action) => {
-  console.log('DID WE MAKE IT??', action)
+
   switch (action.type) {
     case 'method':
-      return appState.method = action.method;
+      // console.log('Method case was Hit!', state)
+      return appState.method = action.method
     case 'body':
       return appState.body = action.body;
     case 'url':
       return appState.url = action.url;
     default:
+      // console.log('default got hit>>>')
       return state;
   }
 }
 
 
-
 export default function Form(props) {
-  const [show, setShow] = useState(false);
-  const [value, dispatch] = useReducer(reducer, appState);
-  console.log('What is Value???::', value)
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [state, dispatch] = useReducer(reducer, appState);
 
 
+  // >>>>>>>>>>>>  HANDLE SUBMIT FUNCTION  >>>>>>>>>>>>>> //
 
-  // >>>>>>>> HANDLE SUBMIT FUNCTION >>>>>>>>>>>>
-
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('RE-METHOD::', appState)
 
     const formData = {
       method: appState.method,
       url: appState.url,
-      body: appState.body
-    };
-
-    props.handleApiCall(formData);
-
-    // >>>>>>>> HISTORY STORING IN LOCAL STORAGE >>>>>>>>>>>>
-    if (appState.url !== null) {
-      apiStorage.push(appState.url);
+      body: state.body,
     }
-    let histroyStr = JSON.stringify(apiStorage);
-    localStorage.setItem('results', histroyStr);
+    props.handleApiCall(formData);
   }
 
 
-
-  // >>>>>>>>>>>>> HANDLER FUNCTIONS >>>>>>>>>>>>>>>>>
+  // >>>>>>>>>>>>> HANDLER FUNCTIONS >>>>>>>>>>>>>>>>> //
 
   const handleURL = (e) => {
-    console.log('URL-CHANGE', e.target.value)
+    e.preventDefault();
     dispatch({ type: "url", url: e.target.value });
   };
 
   const handleMethod = (e) => {
-    console.log('Meth-CHANGE', e.target.value)
+    e.preventDefault();
+    // console.log('Meth-CHANGE', e.target.value)
     dispatch({ type: "method", method: e.target.value });
+    // forceUpdate();
   };
 
   const handleBody = (e) => {
-    console.log('BODY"S::::', e.target.value)
+    e.preventDefault();
+    // console.log('BODY"S::::', e.target.value)
     dispatch({ type: "body", body: e.target.value });
   };
-
-
-
-  // >>>>>>>> RETRIVING FROM LOCAL STORAGE >>>>>>>>>>>>>>>
-
-  const saved = JSON.parse(localStorage.getItem('results'));
-
 
 
   return (
@@ -112,7 +76,7 @@ export default function Form(props) {
 
       <div id='container'>
 
-        {/* >>>>>>>  FORM >>>>>>>>>>>>*/}
+        {/* >>>>>>>>>  FORM  >>>>>>>>>>>>*/}
 
         <form onSubmit={handleSubmit}>
           <label >
@@ -132,38 +96,9 @@ export default function Form(props) {
           </div>
         </form>
         <div id='modalMain'>
-          <div id="modalContainer">
-
-            {/* >>>>>>>  MODAL >>>>>>>>>>>>*/}
-
-            <Button id='modalButton' variant="primary" onClick={handleShow}>
-              History
-            </Button>
-            <Modal classname='modal'
-              show={show}
-              onHide={handleClose}
-            >
-              <Modal.Header >
-                <Modal.Title id='modalTitle'>URL History</Modal.Title>
-              </Modal.Header>
-              {saved ? saved.map((x, key) =>
-              (
-                <Modal.Body>
-                  <h4 key={key}> - {x}</h4>
-                </Modal.Body>
-              )
-              ) : undefined}
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  Close
-                </Button>
-              </Modal.Footer>
-            </Modal>
-          </div>
 
 
-
-          {/* >>>>>>>  JSON TEXT AREA >>>>>>>>>>>>*/}
+          {/* >>>>>>>>>>>  JSON TEXT AREA  >>>>>>>>>>>>*/}
 
           <div id='jsonLable'>
             <textarea id='json' onChange={(e) => handleBody(e)} />

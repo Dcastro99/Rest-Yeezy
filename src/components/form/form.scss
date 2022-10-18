@@ -5,10 +5,6 @@ $backgroundColor: #efefef;
 $radius: 40%;
 
 
-#modalTitle {
-  color: coral;
-  font-family: 'Fredericka the Great', cursive;
-}
 form {
   display: flex;
   flex-direction: column; 
@@ -26,12 +22,13 @@ form {
     margin: 1rem 0;
 
   }
-  #modalMain {
-    background-color: darkcyan;
-    display: flex;
-    flex-direction: column; 
-    // align-items: center;
-  }
+  // #modalMain {
+  //   // background-color: darkcyan;
+  //   display: flex;
+  //   flex-direction: column; 
+  //   // padding:25px;
+  //   // align-items: center;
+  // }
 
 }
 
@@ -57,29 +54,8 @@ button{
 
     
 
-#modalButton {
 
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  // margin: auto;
-  margin: 2rem auto 2rem auto ;
-  width: 80px;
-}
-.modal {
-// background-color: blueviolet;  
-color: #efefef;
-  display: flex;
-  flex-direction:column; 
-  align-items: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  background-color: rgba(57, 62, 62, 0.371);
-  border-radius: 10px;
-  margin-left: 25px;
-  padding: 2rem;
-  width: fit-content;
-  height:fit-content;
-}
+
 
 #URL{
 color: #efefef;
@@ -98,7 +74,7 @@ font-family: 'Anton', sans-serif;
   flex-direction: column; 
   justify-content:flex-start;
   align-items: center;
-  margin: auto;
+  margin: 25px;
   padding:15px;
   width: 400px;
   min-height: 200px;
