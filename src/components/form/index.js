@@ -34,6 +34,7 @@ const reducer = (state, action) => {
 
 export default function Form(props) {
   const [state, dispatch] = useReducer(reducer, appState);
+  console.log('state', state)
 
 
   // >>>>>>>>>>>>  HANDLE SUBMIT FUNCTION  >>>>>>>>>>>>>> //
@@ -44,8 +45,9 @@ export default function Form(props) {
     const formData = {
       method: appState.method,
       url: appState.url,
-      body: state.body,
+      body: appState.body,
     }
+
     props.handleApiCall(formData);
   }
 

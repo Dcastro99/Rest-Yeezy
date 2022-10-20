@@ -10,6 +10,7 @@ import './app.scss';
 // >>>>>>>>>>  STORAGE ARRAY  >>>>>>>>>>>>>> //
 
 const apiStorage = [];
+const set = new Set();
 
 
 function App() {
@@ -22,7 +23,11 @@ function App() {
 
 
   const callApi = (requestParams) => {
-    apiStorage.push(requestParams.url);
+    if (!set.has(requestParams.url)) {
+      console.log('set>>>>>>>>', set)
+      set.add(requestParams.url)
+      apiStorage.push(requestParams.url);
+    }
     setrequestParams(requestParams)
   }
 
